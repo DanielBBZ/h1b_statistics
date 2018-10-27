@@ -13,7 +13,7 @@ If the newspaper gets data for the year 2019 (with the assumption that the neces
 
 The problem is handeled with python(3), and only requires importing sys packages, no requirement for any other packages like pandas or numpy. In this task, 4 functions are designed, specifically, they will do:
 
-1. get_h1b_data(file): load data and get the index for State code and Job tile code, for future reference. This function will search for the index for 'EMPLOYER_STATE' and 'SOC_NAME', not hard coding the position of these columns, so it can tolerate with these columns in different positions accross different input files. 
+1. get_h1b_data(file): load data and get the index for State code and Job tile code, for future reference. This function will search for the index for 'WORKSITE_STATE' and 'SOC_NAME', not hard coding the position of these columns, so it can tolerate with these columns in different positions accross different input files. 
 
 2. count_to_dict(data, location): calculate group count and save the information into a dictionary. This function will only take those case 'certified' into consideration.
 
