@@ -34,13 +34,13 @@ def get_h1b_data(file):
             data = []
             for line in f:
                 words = line.split(';')
-                data.append((words[0], words[1:]))
+                data.append(words[1:])
     except:
         exit("-- Unable to load the file")
     
     #Get the index for the columns we are going to use for counting
-    State_loc = data[0][1].index('EMPLOYER_STATE')  #get the index for State
-    Job_loc = data[0][1].index('SOC_NAME')          #get the index for Job code
+    State_loc = data[0].index('WORKSITE_STATE')  #get the index for State
+    Job_loc = data[0].index('SOC_NAME')          #get the index for Job code
     
     index_list = [State_loc, Job_loc]
     
@@ -60,11 +60,11 @@ def count_to_dict(data, location):
     
     use case: Job_count = count_to_dict(data, Job_loc)
     """
-    Status_loc = data[0][1].index('CASE_STATUS')    #get the index for case_status
+    Status_loc = data[0].index('CASE_STATUS')    #get the index for case_status
     result = {}
     for i in range(1,len(data)):
-        if data[i][1][Status_loc] == 'CERTIFIED':         #only count if the case is certified
-            key = data[i][1][location].strip('\"')        #remove " in the str
+        if data[i][Status_loc] == 'CERTIFIED':         #only count if the case is certified
+            key = data[i][location].strip('\"')        #remove " in the str
             if not key in result:
                 result[key] = 1
             else:
@@ -73,6 +73,7 @@ def count_to_dict(data, location):
             None
    
     return result
+	
 	
 	
 def dict_to_pct(data):
