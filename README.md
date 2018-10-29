@@ -13,13 +13,13 @@ If the newspaper gets data for the year 2019 (with the assumption that the neces
 
 The problem is handeled with python(3), and only requires importing sys packages, no requirement for any other packages like pandas or numpy. In this task, 4 functions are designed, specifically, they will do:
 
-1. get_h1b_data(file): load data and get the index for State code and Job tile code, for future reference. This function will search for the index for 'WORKSITE_STATE' and 'SOC_NAME', not hard coding the position of these columns, so it can tolerate with these columns in different positions accross different input files. 
+1. **get_h1b_data(file)**: load data and get the index for State code and Job tile code, for future reference. This function will search for the index for 'WORKSITE_STATE' and 'SOC_NAME', not hard coding the position of these columns, so it can tolerate with these columns in different positions accross different input files. 
 
-2. count_to_dict(data, location): calculate group count and save the information into a dictionary. This function will only take those case 'certified' into consideration.
+2. **count_to_dict(data, location)**: calculate group count and save the information into a dictionary. This function will only take those case 'certified' into consideration.
 
-3. dict_to_pct(data): calculate percentage based on the count, and combine the percentage with the former dictionary into a list. In this list, each item is another list with 3 items, during which item1 is key name, either a state code or a job code, item2 is the count for the key, and item3 is the percentage for this key. The list will be sorted by percentage descendingly and then by first element alphabatically; As the kaggle requires, we only output top10 items here, if user want to output more lines, just modify the return part to 'return result[0:No. lines to output]'
+3. **dict_to_pct(data)**: calculate percentage based on the count, and combine the percentage with the former dictionary into a list. In this list, each item is another list with 3 items, during which item1 is key name, either a state code or a job code, item2 is the count for the key, and item3 is the percentage for this key. The list will be sorted by percentage descendingly and then by first element alphabatically; As the kaggle requires, we only output top10 items here, if user want to output more lines, just modify the return part to 'return result[0:No. lines to output]'
 
-4. get_final_pct(inputfile, outputfile, job_state): combine former 3 functions and output the data accordingly 
+4. **get_final_pct(inputfile, outputfile, job_state)**: combine former 3 functions and output the data accordingly 
 
 # RunInstructions 
 
