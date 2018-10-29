@@ -34,6 +34,6 @@ It should generate two text files in the output folder:
 
 The run.sh file contains this command: 
 
-    python ./src/h1b_counting.py ./input/h1b_input.csv ./output/top_10_occupations.txt ./output/top_10_states.txt
+    python3 ./src/h1b_counting.py ./input/h1b_input.csv ./output/top_10_occupations.txt ./output/top_10_states.txt
 
 The processing time for 230MB input file is around 40 seconds based on my test. 
